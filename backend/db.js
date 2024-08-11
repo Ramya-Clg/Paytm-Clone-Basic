@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+import * as dotenv from 'dotenv';
+dotenv.config();
 
-mongoose.connect('mongodb+srv://rs:ramya2005@cluster0.gyy9qoc.mongodb.net/paytm');
+mongoose.connect(process.env.MONGO_URL);
 
 const userSchema = new mongoose.Schema({
     username: {
