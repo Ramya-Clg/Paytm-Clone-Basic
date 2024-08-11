@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const { Router } = require("express");
 const authMiddleware = require("../middleware");
@@ -60,4 +60,4 @@ router.post("/transaction", authMiddleware, async (req, res) => {
     });
 });
 
-export default Router();
+module.exports=router;

@@ -36,11 +36,11 @@ const userSchema = new mongoose.Schema({
 userSchema.methods.createHash = async function (password) {
     const salt = 10;
     return await bcrypt.hash(password, salt);
-}
+};
 
 userSchema.methods.validatePassword = async function (password) {
     return await bcrypt.compare(password, this.password_hash);
-}
+};
 
 const User =  mongoose.model('User', userSchema);
 
