@@ -1,3 +1,9 @@
+import Heading from "../components/Heading";
+import Subheading from "../components/Subheading";
+import InputBox from "../components/InputBox";
+import Button from "../components/Button";
+import BottomWarning from "../components/BottomWarning";
+
 export default function Signup(){
   return <>
     <div className="bg-slate-300 h-screen flex justify-center">
