@@ -73,8 +73,8 @@ const signinBody = zod.object({
 
 router.post("/signin", async (req, res) => {
     console.log(req.body);
+    // console.log(success);
     const {success} = signinBody.safeParse(req.body);
-
     if(!success){
         return res.status(411).json({
             msg: "Invalid data"
@@ -148,12 +148,13 @@ router.put("/update", async (req, res) => {
 
 router.get("/bulk", async (req, res) => {
     const filter = req.query.filter || "";
+    // console.log(filter);
     const users = await User.find({
         $or: [{
             firstName: {
                 $regex: filter,
-            },
-            lastName: {
+            }},
+            {lastName: {
                 $regex: filter,
             }
         }]

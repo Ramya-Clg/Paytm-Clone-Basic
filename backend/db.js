@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-import * as dotenv from 'dotenv';
+const dotenv = require('dotenv');
 dotenv.config();
+
 
 mongoose.connect(process.env.MONGO_URL);
 
